@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Administration</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<!-- TODO: MENU -->
+<!-- TODO: Table of students -->
+<div class="container">
+    <h1>Student administration - Students</h1>
+    <h2>Enrolled Students at KEA</h2>
+    <a href="/createStudent"><button class ="btn btn-create">Create</button></a>
+    <br>
+
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Enrollment</th>
+            <th>Options</th>
+        </tr>
+
+        <tr th:each="student : ${students}">
+            <th th:text="${student.firstName}"></th>
+            <th th:text="${student.lastName}"></th>
+            <th th:text="${student.enrollmentDate}"></th>
+            <th>
+                <a th:href="@{/student(id=${student.id})}"><button class="btn">Details</button></a>
+                <a th:href="@{/updateStudent(id=${student.id})}"><button class ="btn btn-ed">Edit</button></a>
+                <a th:href="@{/deleteStudent(id=${student.id})}"><button class="btn btn-del">Delete</button></a>
+            </th>
+
+
+
+        </tr>
+
+        <!--
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>19/5-2020</td>
+            <td><button>click me</button></td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>11/6-2013</td>
+            <td><button>click me</button></td>
+
+        </tr>
+        <tr>
+            <td>Karl</td>
+            <td>Marx</td>
+            <td>11/6-2013</td>
+            <td><button>click me</button></td>
+
+        </tr>
+        -->
+    </table>
+</div>
+</body>
+</html>
