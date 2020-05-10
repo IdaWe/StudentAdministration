@@ -62,6 +62,13 @@ public class StudentController {
         return "student/updateStudent";
     }
 
+    @PostMapping("/updateStudent")
+    public String edit(@ModelAttribute Student student){
+        studentRepository.update(student);
+        return "redirect:/";
+    }
+
+
     //Very simple prototype of GET-request with parameter
     //https://www.baeldung.com/spring-request-param
     //TODO Direct to detailed view of student

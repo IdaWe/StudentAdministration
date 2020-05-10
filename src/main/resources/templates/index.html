@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <title>Student Administration</title>
     <!-- stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/stylesIndex.css">
+
+    <nav class="nav">
+        <a href="/">KEA</a>
+        <a href="/">Students</a>
+        <a href="/">Courses</a>
+    </nav>
+
 </head>
 <body>
 <!-- TODO: MENU -->
@@ -26,7 +33,7 @@
         <tr th:each="student : ${students}">
             <th th:text="${student.firstName}"></th>
             <th th:text="${student.lastName}"></th>
-            <th th:text="${student.enrollmentDate}"></th>
+            <th th:text="${#dates.format(student.enrollmentDate, 'yyyy-MM-dd')}"></th>
             <th>
                 <a th:href="@{/student(id=${student.id})}"><button class="btn">Details</button></a>
                 <a th:href="@{/updateStudent(id=${student.id})}"><button class ="btn btn-ed">Edit</button></a>

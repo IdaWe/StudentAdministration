@@ -1,6 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.demo.models.Student;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -44,13 +45,14 @@ public class InMemoryStudentRepositoryImpl implements IStudentRepository{
         return inMemoryDatabase;
     }
 
+
     @Override
     public void update(Student student) {
-
-
-
-
-
+        Student updateStudent = read(student.id);
+        updateStudent.firstName=student.firstName;
+        updateStudent.lastName=student.lastName;
+        updateStudent.enrollmentDate=student.enrollmentDate;
+        updateStudent.cpr=student.cpr;
     }
 
     @Override
