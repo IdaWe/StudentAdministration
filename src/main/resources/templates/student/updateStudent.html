@@ -3,44 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <title>Her kan du rette</title>
+    <title>Update</title>
 
+
+</head>
+<body>
+<header>
     <nav class="nav">
         <a href="/">KEA</a>
         <a href="/">Students</a>
         <a href="/">Courses</a>
     </nav>
-
-</head>
-<body>
-<h1>BLA BLA BLA</h1>
+</header>
+<h1>Update</h1>
 <form class ="container" th:action="@{/updateStudent}" th:object="${student}" method="post">
     <input type="hidden" name="id" th:value="${student.id}"/>
-    <table>
-        <tr>
+    <!--<p th:text="${student.id}"></p>-->
+
+    <tr>
             <th>First Name</th>
             <td><input type="text" name="firstName" th:value="*{firstName}"/></td>
         </tr>
+        <br>
         <tr>
             <th>Last Name</th>
             <td><input type="text" name="lastName" th:value="*{lastName}"/></td>
         </tr>
+        <br>
         <tr>
             <th>Enrollment date</th>
             <td><input type="date" name="enrollmentDate" th:value="*{#dates.format(enrollmentDate, 'yyyy-MM-dd')}"/></td>
         </tr>
+        <br>
         <tr>
             <th>Cpr</th>
             <td><input type="text" name="cpr" th:value="*{cpr}"/></td>
         </tr>
-    <p th:text="${student.id}"></p>
     <!--<p th:text="${student.firstName}"></p>
     <p th:text="${student.lastName}"></p>
     <p th:text="${student.enrollmentDate}"></p>
     <p th:text="${student.cpr}"></p>-->
-
         <br>
-    </table>
+
     <input type="submit" value="Update" class="btn btn-create">
 </Form>
 

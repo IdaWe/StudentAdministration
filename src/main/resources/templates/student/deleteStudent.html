@@ -5,24 +5,34 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <title>Her kan du rette</title>
 
+</head>
+<body>
+<header>
     <nav class="nav">
         <a href="/">KEA</a>
         <a href="/">Students</a>
         <a href="/">Courses</a>
     </nav>
-</head>
-<body>
-<h1>BLA BLA BLA</h1>
+</header>
+<div class="container">
+<h1>Delete</h1>
+    <h2>Are you sure you want to delete?</h2>
 <Form class ="container" th:action="@{student/deleteStudent}" method="post">
     <input type="hidden" name="id" th:value="${student.id}"/>
-    <p th:text="${student.id}"></p>
-    <p th:text="${student.firstName}"></p>
-    <p th:text="${student.lastName}"></p>
-    <p th:text="${student.enrollmentDate}"></p>
-    <p th:text="${student.cpr}"></p>
-    <input class ="btn btn-primary" type="submit"value="Delete student"/>
-
+    <!--<p th:text="${student.id}"></p>-->
+    <span th:text="${student.firstName}"></span>
+    <span th:text="${student.lastName}"></span>
+    <!--<p th:text="${student.#dates.format(student.enrollmentDate, 'yyyy-MM-dd')}"></p>
+    <p th:text="${student.cpr}"></p>-->
+    <p>
+        <span>
+            <a href="/overview"><button class="btn btn-create w" type="submit">Yes</button></a>
+        </span>
+        <span>
+            <a href="/overview" class="btn btn-del w" type="submit">No</a>
+        </span>
+    </p>
 </Form>
-
+</div>
 </body>
 </html>

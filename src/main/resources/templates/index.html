@@ -1,72 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Administration</title>
-    <!-- stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/css/stylesIndex.css">
-
-    <nav class="nav">
-        <a href="/">KEA</a>
-        <a href="/">Students</a>
-        <a href="/">Courses</a>
-    </nav>
-
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Welcome to KEA</title>
 </head>
 <body>
-<!-- TODO: MENU -->
-<!-- TODO: Table of students -->
+
+<!-- Header Section -->
+
+<header>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navigation">
+
+        <a href="/">KEA</a>
+        <a href="overview">Students</a>
+        <a href="/">Courses</a>
+
+    </nav>
+
+</header>
+
 <div class="container">
-    <h1>Student administration - Students</h1>
-    <h2>Enrolled Students at KEA</h2>
-    <a href="/createStudent"><button class ="btn btn-create">Create</button></a>
-    <br>
 
-    <table>
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Enrollment</th>
-            <th>Options</th>
-        </tr>
+    <!-- <img src> -->
 
-        <tr th:each="student : ${students}">
-            <th th:text="${student.firstName}"></th>
-            <th th:text="${student.lastName}"></th>
-            <th th:text="${#dates.format(student.enrollmentDate, 'yyyy-MM-dd')}"></th>
-            <th>
-                <a th:href="@{/student(id=${student.id})}"><button class="btn">Details</button></a>
-                <a th:href="@{/updateStudent(id=${student.id})}"><button class ="btn btn-ed">Edit</button></a>
-                <a th:href="@{/deleteStudent(id=${student.id})}"><button class="btn btn-del">Delete</button></a>
-            </th>
+    <h1>Welcome to KEA</h1>
 
-
-
-        </tr>
-
-        <!--
-        <tr>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>19/5-2020</td>
-            <td><button>click me</button></td>
-        </tr>
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>11/6-2013</td>
-            <td><button>click me</button></td>
-
-        </tr>
-        <tr>
-            <td>Karl</td>
-            <td>Marx</td>
-            <td>11/6-2013</td>
-            <td><button>click me</button></td>
-
-        </tr>
-        -->
-    </table>
 </div>
+
 </body>
 </html>

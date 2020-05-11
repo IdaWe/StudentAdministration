@@ -1,6 +1,7 @@
-package com.example.demo.repositories;
+/*package com.example.demo.repositories;
 
 import com.example.demo.models.Student;
+import com.example.demo.models.StudentDTO;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Service
 public class InMemoryStudentRepositoryImpl implements IStudentRepository{
-    private List<Student> inMemoryDatabase;
+    private List<StudentDTO> inMemoryDatabase;
 
     //fylder "fake" database med studerende her i konstrukteren
     public InMemoryStudentRepositoryImpl(){
@@ -60,4 +61,4 @@ public class InMemoryStudentRepositoryImpl implements IStudentRepository{
         Student deleteStudent = read(id);
         inMemoryDatabase.remove(deleteStudent);
     }
-}
+}*/

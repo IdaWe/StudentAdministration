@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Details</title>
+
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <a href="/">KEA</a>
+        <a href="/">Students</a>
+        <a href="/">Courses</a>
+    </nav>
+</header>
+<div class="container">
+<h1>Details</h1>
+<Form class ="container" th:action="@{student/details}" method="post">
+    <input type="hidden" name="id" th:value="${student.id}"/>
+
+    <tr>
+        <td>Id:</td>
+        <td th:text="${student.id}"></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <td>First name:</td>
+        <td th:text="${student.firstName}"></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <td>Last name:</td>
+        <td th:text="${student.lastName}"></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <td>Enrollment date:</td>
+        <td th:text="${student.#dates.format(student.enrollmentDate, 'yyyy-MM-dd')}"></td>
+    </tr>
+    <br>
+    <br>
+    <tr>
+        <td>Cpr:</td>
+        <td th:text="${student.cpr}"></td>
+    </tr>
+</Form>
+</div>
+</body>
+</html>

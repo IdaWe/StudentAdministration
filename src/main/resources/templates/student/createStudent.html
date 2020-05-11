@@ -21,28 +21,32 @@
 <div class="container">
     <h1>Create Student</h1>
     <form th:action="@{/createStudent}" th:object="${student}" method="post">
-        <table>
+
             <tr>
-                <th>First Name</th>
+                <th>First Name:</th>
                 <td><input type="text" th:field="*{firstName}" placeholder="First name" /></td>
             </tr>
+            <br>
             <tr>
-                <th>Last Name</th>
+                <th>Last Name:</th>
                 <td><input type="text" th:field="*{lastName}" placeholder="Last name"/></td>
             </tr>
+            <br>
             <tr>
-                <th>Enrollment date</th>
-                <td><input type="date" th:field="*{enrollmentDate}"/></td>
+                <th>Enrollment date:</th>
+                <td><input type="date" th:field="*{enrollmentDate}" placeholder="Enrollment date"/></td>
             </tr>
+            <br>
             <tr>
-                <th>Cpr</th>
-                <td><input type="text" th:field="*{cpr}"/></td>
+                <th>Cpr:</th>
+                <td><input type="text" th:field="*{cpr}" placeholder="Cpr"/></td>
             </tr>
-        </table>
+        <br>
+
+        <input type="submit" value="Create" class="btn btn-create">
     </form>
 
     <br>
-    <input type="submit" value="Create" class="btn btn-create">
 </div>
 
 </body>

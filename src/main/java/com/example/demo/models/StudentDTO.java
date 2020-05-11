@@ -1,10 +1,10 @@
-/*package com.example.demo.models;
+package com.example.demo.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-public class Student{
+public class StudentDTO{
     public int id;
     public String firstName;
     public String lastName;
@@ -12,7 +12,7 @@ public class Student{
     public Date enrollmentDate;
     public String cpr;
 
-    public Student(int id, String firstName, String lastName, Date enrollmentDate, String cpr) {
+    public StudentDTO(int id, String firstName, String lastName, Date enrollmentDate, String cpr) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,7 +20,7 @@ public class Student{
         this.cpr = cpr;
     }
 
-    public Student() {}
+    public StudentDTO() {}
 
     public int getId() {
         return id;
@@ -51,6 +51,8 @@ public class Student{
         return enrollmentDate;
     }
 
+
+
     public void setEnrollmentDate(Date enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
     }
@@ -73,4 +75,4 @@ public class Student{
                 ", cpr='" + cpr + '\'' +
                 '}';
     }
-}*/
+}

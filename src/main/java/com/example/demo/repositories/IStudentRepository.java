@@ -1,18 +1,19 @@
 package com.example.demo.repositories;
 
-import com.example.demo.models.Student;
+//import com.example.demo.models.Student;
+import com.example.demo.models.StudentDTO;
 
 import java.util.List;
 
 public interface IStudentRepository {
     // CRUD operations
-    public void create(Student student);
+    public void create(StudentDTO studentDTO);
 
-    public Student read(int id);
+    public StudentDTO read(int id);
 
-    public List<Student> readAll();
+    public List<StudentDTO> readAll();
 
-    public void update(Student student);
+    public void update(StudentDTO studentDTO);
 
     public void delete(int id);
 }
