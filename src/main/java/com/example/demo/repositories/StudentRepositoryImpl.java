@@ -99,9 +99,12 @@ public class StudentRepositoryImpl implements IStudentRepository {
             prep.executeUpdate();
 
         } catch (SQLException e) {
+            System.out.println("Test");
+
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void delete(int id) {
